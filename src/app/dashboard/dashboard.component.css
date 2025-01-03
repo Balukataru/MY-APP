@@ -6,4 +6,9 @@
 .right{
     width: 15%;
     background-color: aquamarine;
+
+}
+.left{
+    width: 85%;
+    overflow: auto;
 }
