@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="card" *ngFor="let pinterest of pinterests">
+        <img src={{pinterest.download_url}} alt="" class="images">
+
+        <a href="{{pinterest.url}}" class="btn btn-primary">Download</a>
+    
+            <h6>{{pinterest.author}}</h6>
+
+    </div>
+
+</div>

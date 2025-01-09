@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #f0f2f5;
     display: flex;
@@ -74,4 +74,81 @@ body {
 
 .forgot-password a:hover {
     text-decoration: underline;
+} */
+
+
+
+
+
+.lknd-signin{ 
+    width: 400px;
+    height: 500px;
+    margin-left: 550px;
+    margin-top: 130px;
+    padding: 10px;
+    border: 1px solid slategray;
+    box-shadow: 3px 3px 30px  slategrey ;
+    /* box-shadow: -3px -3px 3px  slategrey; */
 }
+h1{
+    font-size: 60px;
+    color: rgb(55, 93, 191);
+}
+form h1{
+    color: black;
+}
+.btn btn-primary{
+    width: 400px;
+}
+
+#btn1{
+    width: 380px;
+    height: 50px;
+    border-radius: 30px;
+}
+#btn2{
+    width: 380px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: white;
+    color: black;
+
+}
+#link{
+    text-decoration: none;
+}
+
+.footer{
+    padding-left: 640px;
+    padding-top: 50px;
+}
+#button-addon2{
+    border: 0px;
+    color: rgb(55, 93, 191);
+}
+#pass{
+    border: 0px;
+}
+#password{
+    border: 0.001px solid rgb(208, 200, 195);
+    border-radius: 7px;
+}
+span{
+    background-color: rgb(55, 93, 191);
+    color: whitesmoke;
+}
+#header{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#svg{
+    margin-bottom: 6px;
+    margin-right: 5px;
+}
+.hr{
+    display: flex;
+}
+hr{
+    width: 190px;
+}
+

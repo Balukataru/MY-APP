@@ -1,0 +1,18 @@
+
+<div class="container">
+
+<div class="card" *ngFor="let product of products">
+    <img src={{product.image}} alt="">
+    <div class="rating">
+
+        <p>{{product.rating.rate}}|{{product.rating.count}}</p>
+    </div>
+    <div class="details">
+        <h3>{{product.category}}</h3>
+        <p>{{product.description | slice:0:100}}</p>
+        <h6>Rs.{{product.price}}</h6>
+    </div>
+
+</div>
+    
+</div>
