@@ -15,4 +15,8 @@ constructor(private _imdbservice:ImdbService){
   });
 
 }
+
+  getStars(rating:number){
+    return Math.floor(rating);
+  }
 }

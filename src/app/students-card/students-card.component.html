@@ -1,0 +1,108 @@
+<div class="fields">
+  <div class="field1">
+    <input
+  type="text"
+  [(ngModel)]="term"
+  (keyup)="filter()"
+  name=""
+  id=""
+  placeholder="Search Student"
+/>
+  </div>
+
+
+  <div class="field2">
+    <label for="">SortColumn</label>
+<select [(ngModel)]="column">
+  <option>city</option>
+  <option>school_name</option>
+  <option>school_city</option>
+</select>&nbsp;&nbsp;
+
+<select [(ngModel)]="order">
+  <option>asc</option>
+  <option>desc</option>
+</select>&nbsp;&nbsp;
+<button class="btn btn-secondary" (click)="sort()">sort</button>
+  </div>
+
+
+  <div class="field3">
+    <select [(ngModel)]="limit">
+      <option>10</option>
+      <option>20</option>
+      <option>30</option>
+    </select>&nbsp;&nbsp;
+    
+    <select [(ngModel)]="page">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>&nbsp;&nbsp;
+    
+    <button class="btn btn-secondary" (click)="pagination()">Pagination</button>
+  </div>
+
+  <div class="field4">
+    <button class="btn btn-secondary" routerLink="/mywebsite/create-student-id">
+      Create student id
+    </button>
+  </div>
+  
+</div>
+
+<div class="main">
+
+  <div class="container mt-3" *ngFor="let studentdetail of studentdetails">
+    <div class="card" >
+      <div class="card-header">
+        <img id="img" src="{{ studentdetail.school_logo }}" alt="" >
+        <div class="school">
+          <h1>{{ studentdetail.school_name }}</h1>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="details">
+          <p>NAME:&nbsp;&nbsp;&nbsp;&nbsp;{{ studentdetail.name }}</p>
+          <p>PHONE:&nbsp;&nbsp;{{ studentdetail.phone }}</p>
+          <p>DOB:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ studentdetail.dob }}</p>
+          <p>
+            CITY:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ studentdetail.city }}
+          </p>
+          <p>EMAIL:&nbsp;&nbsp;&nbsp;{{ studentdetail.email }}</p>
+        </div>
+        <div class="pic">
+          <img id="img1" src="{{ studentdetail.profile_picture }}" alt="" />
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="footer-details">
+          <p>
+            School_city:&nbsp;&nbsp;&nbsp;&nbsp;{{ studentdetail.school_city }}
+          </p>
+          <p>
+            School_pin:&nbsp;&nbsp;&nbsp;&nbsp;{{ studentdetail.school_pin }}
+          </p>
+        </div>
+        <div class="buttons">
+          <button class="btn btn-info" (click)="view()">View</button>
+          <button class="btn btn-primary" (click)="edit()">Edit</button>
+          <button class="btn btn-danger" (click)="delete(studentdetail.id)">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  
+
+    

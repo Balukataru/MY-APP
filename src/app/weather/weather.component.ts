@@ -7,11 +7,15 @@ import { WeatherService } from '../weather.service';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent {
-weathers:any = [];
-
-constructor(private _weatherservices:WeatherService){
-_weatherservices.getweathers().subscribe((data:any)=>{
-  this.weathers=data;
-});
-}
+  
+  wheathers:any={};
+  date=new Date();
+  constructor(private _weatherservice:WeatherService){
+    _weatherservice.getweather().subscribe(
+      (data:any)=>{
+        this.wheathers=data;
+      }
+    )
+  }
+  
 }

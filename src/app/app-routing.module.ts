@@ -21,6 +21,12 @@ import { PinterestComponent } from './pinterest/pinterest.component';
 import { BlogComponent } from './blog/blog.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ImdbComponent } from './imdb/imdb.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { StudentsCardComponent } from './students-card/students-card.component';
+import { CreateStudentIdComponent } from './create-student-id/create-student-id.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -31,6 +37,8 @@ const routes: Routes = [
     {path: 'data-binding',component:DataBindingComponent},    
     {path:'Derivatives',component:DerivativesComponent},
     {path:'employee',component:EmployeeComponent},
+    {path:'create-user',component:CreateUserComponent},
+    {path:'student-details',component:StudentDetailsComponent}
 
 
   ]},
@@ -51,6 +59,10 @@ const routes: Routes = [
     {path:'blog',component:BlogComponent},
     {path:'weather',component:WeatherComponent},
     {path:'imdbrating',component:ImdbComponent},
+    {path:'carousel',component:CarouselComponent},
+    {path:'create-vehicle',component:CreateVehicleComponent},
+    {path:'students-card',component:StudentsCardComponent},
+    {path:'create-student-id',component:CreateStudentIdComponent},
 
   ]}
 ];

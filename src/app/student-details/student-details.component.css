@@ -1,0 +1,16 @@
+.parent{
+    margin: 20px;
+    margin-left: 400px;
+    padding: 20px;
+    width: 500px;
+    background-color: rgb(213, 223, 219); 
+}
+
+input{
+    width: 300px;
+    /* text-align: center; */
+}
+.radio{
+    width: 50px;
+}
+

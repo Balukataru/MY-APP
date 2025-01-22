@@ -1,7 +1,7 @@
 
 <h1>Vehicles</h1>
 
-<input type="text" [(ngModel)]="term" (keyup)="filter()" name="" id="">
+<input type="text" [(ngModel)]="term" (keyup)="filter()" name="" id="" placeholder="filter"> &nbsp;
 
 <select [(ngModel)]="column">
     <option>Vehicle</option>
@@ -9,14 +9,39 @@
     <option>model</option>
     <option>type</option>
     <option>fuel</option>
-</select>
+    <option>cost</option>
+    <option>image</option>
+</select>&nbsp;
 
 <select [(ngModel)]="order">
     <option>asc</option>
     <option>desc</option>
 
-</select>
-<button class="btn btn-primary" (click)="sort()">sort</button>
+</select>&nbsp;
+<button class="btn btn-primary" (click)="sort()">sort</button>&nbsp;
+<select [(ngModel)]="limit">
+    <option>10</option>
+    <option>20</option>
+    <option>30</option>
+    <option>40</option>
+    <option>50</option>
+    
+</select>&nbsp;
+
+<select [(ngModel)]="page">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+
+</select>&nbsp;
+
+<button class="btn btn-primary" (click)="pagination()">pagination</button>&nbsp;
+
+<button class="btn btn-primary" routerLink="/mywebsite/create-vehicle">create vehicle</button>
+
+
 
 <table class="table table-dark">
 
@@ -28,6 +53,10 @@
             <th>Model</th>
             <th>Type</th>
             <th>Fuel</th>
+            <th>Cost</th>
+            <th>Image</th>
+            <th>Actions</th>
+
         </tr>
     </thead>
     <tbody>
@@ -37,6 +66,15 @@
             <td>{{vehicle.model}}</td>
             <td>{{vehicle.type}}</td>
             <td>{{vehicle.fuel}}</td>
+            <td>{{vehicle.cost}}</td>
+            <td><img src="{{vehicle.image}}" alt=""> </td>
+            <td>
+                <button class="btn btn-danger" 
+                (click)="delete(vehicle.id)">
+                <i class="bi bi-trash3"></i>
+            </button>
+            </td>
+
 
         </tr>
     </tbody>
