@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, MinLengthValidator, Validators } from '@angular/forms';
+import { max, min } from 'rxjs';
 
 @Component({
   selector: 'app-student-details',
@@ -10,8 +11,9 @@ export class StudentDetailsComponent {
 
   public studentsForm:FormGroup=new FormGroup({
 
-    name: new FormControl(''),
+    name: new FormControl('',[Validators.required]),
     class: new FormControl(''),
+    mobilenum: new FormControl('',[Validators.required,Validators.min(1000000000),Validators.max(9999999999)]),
     fathername: new FormControl(''),
     email: new FormControl(''),
     dob: new FormControl(''),
@@ -19,7 +21,7 @@ export class StudentDetailsComponent {
       addressline: new FormControl(''),
       city: new FormControl(''),
       state: new FormControl(''),
-      pincode: new FormControl(''),
+      pincode: new FormControl('',[Validators.required,Validators.maxLength(6)]),
 
     }),
     type:new FormControl(''),

@@ -5,9 +5,23 @@
 
     <label for="name">Name:</label><br>
     <input type="text" name="name" id="name" formControlName="name"><br><br>
+    <div *ngIf="studentsForm.get('name')?.invalid && studentsForm.get('name')?.touched">
+        <p *ngIf="studentsForm.get('name')?.errors?.['required']">Name is required</p>
+    </div>
 
     <label for="class">Class:</label><br>
     <input type="number" name="class" id="class" formControlName="class"><br><br>
+
+    <label for="mobilenum">Mobile Num:</label><br>
+    <input type="number" name="mobilenum" id="mobilenum" formControlName="mobilenum"><br><br>
+    <div *ngIf="studentsForm.get('mobilenum')?.invalid && studentsForm.get('mobilenum')?.touched">
+        <p *ngIf="studentsForm.get('mobilenum')?.errors?.['required']">Mobile Number is required</p>
+        <p *ngIf="studentsForm.get('mobilenum')?.errors?.['min']">Mobile Number should be valid</p>
+        <p *ngIf="studentsForm.get('mobilenum')?.errors?.['max']">Mobile Number should be valid</p>
+        <!-- <p *ngIf="studentsForm.get('mobilenum')?.errors?.['minlength']">Mobile Number should be 10 numbers</p>
+        <p *ngIf="studentsForm.get('mobilenum')?.errors?.['maxlength']">Mobile Number should be 10 numbers</p> -->
+    </div>
+
 
     <label for="fathername">FatherName:</label><br>
     <input type="text" name="fathername" id="fathername" formControlName="fathername"><br><br>
@@ -32,6 +46,10 @@
     
         <label for="pincode">Pincode:</label><br>
         <input type="number" name="pincode" id="pincode" formControlName="pincode"><br><br>
+        <div *ngIf="studentsForm.get('address')?.get('pincode')?.invalid && studentsForm.get('address')?.get('pincode')?.touched">
+            <p *ngIf="studentsForm.get('address')?.get('pincode')?.errors?.['required']">Pincode is required</p>
+            <p *ngIf="studentsForm.get('address')?.get('pincode')?.errors?.['maxlength']">Pincode should be 6 digits</p>
+        </div>
     
     </div>
 

@@ -27,11 +27,13 @@ import { StudentsCardComponent } from './students-card/students-card.component';
 import { CreateStudentIdComponent } from './create-student-id/create-student-id.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
+import { AuthenticationGuard } from './authentication.guard';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'login',component:LoginComponent},
-  {path:'dashboard',component:DashboardComponent,children:[
+  {path:'dashboard',canActivate:[AuthenticationGuard], component:DashboardComponent,children:[
     {path:'welcome',component:WelcomeComponent},
     {path:'calculator',component:CalculatorComponent},
     {path: 'data-binding',component:DataBindingComponent},    
@@ -63,6 +65,8 @@ const routes: Routes = [
     {path:'create-vehicle',component:CreateVehicleComponent},
     {path:'students-card',component:StudentsCardComponent},
     {path:'create-student-id',component:CreateStudentIdComponent},
+    {path:'vehicle-details/:id',canActivate:[AuthenticationGuard], component:VehicleDetailsComponent},
+    {path:'edit-vehicle/:id',component:CreateVehicleComponent}
 
   ]}
 ];

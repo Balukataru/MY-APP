@@ -1,8 +1,10 @@
 div{
-    width: 400px;
+    width: 500px;
     height: 600px;
     background-color: aliceblue;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
     margin-left: 400px;
     margin-top: 50px;
+    padding: 10px;
 }

@@ -3,12 +3,25 @@
 
     <label for="name">Name</label>
     <input type="text" name="name" id="name" formControlName="name"><br>
+    <div *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched">
+        <p *ngIf="userForm.get('name')?.errors?.['required']">Name is required</p>
+    </div>
 
     <label for="email">Email</label>
     <input type="email" name="email" id="email" formControlName="email"><br>
+    <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+        <p *ngIf="userForm.get('email')?.errors?.['required']">Email is Required</p>
+        <p *ngIf="userForm.get('email')?.errors?.['email']">Email is Invalid</p>
+    </div>
+
 
     <label for="password">Password</label>
     <input type="password" name="password" id="password" formControlName="password"><br>
+    <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched">
+        <p *ngIf="userForm.get('password')?.errors?.['required']">Password is Required</p>
+        <p *ngIf="userForm.get('password')?.errors?.['minlength']">Password must be minimum 6 letters</p>
+        <p *ngIf="userForm.get('password')?.errors?.['minlength']">Password must be maximum 10 letters</p>
+    </div>
 
     <label for="mobile">Mobile</label>
     <input type="number" name="number" id="number" formControlName="mobile"><br>
