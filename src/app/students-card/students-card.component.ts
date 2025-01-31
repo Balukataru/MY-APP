@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { StudentService } from '../student.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-students-card',
@@ -8,12 +9,14 @@ import { StudentService } from '../student.service';
 })
 export class StudentsCardComponent {
   studentdetails: any = [];
-  constructor(private _studentdetailsservice: StudentService) {
+  constructor(private _studentdetailsservice: StudentService, ) {
     _studentdetailsservice.getStudentdetails().subscribe((data: any) => {
       this.studentdetails = data;
       console.log(this.studentdetails);
     });
   }
+
+
   delete(id: number) {
     if (confirm('Are you sure to delete?') == true) {
       this._studentdetailsservice.deleteStudentdetail(id).subscribe(
@@ -67,6 +70,8 @@ export class StudentsCardComponent {
       alert('Internal Server Error')
     })
   }
+
+
 
 
 

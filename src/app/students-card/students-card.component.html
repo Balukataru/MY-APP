@@ -46,7 +46,7 @@
 
   <div class="field4">
     <button class="btn btn-secondary" routerLink="/mywebsite/create-student-id">
-      Create student id
+      Add student
     </button>
   </div>
   
@@ -87,8 +87,16 @@
           </p>
         </div>
         <div class="buttons">
-          <button class="btn btn-info" (click)="view()">View</button>
-          <button class="btn btn-primary" (click)="edit()">Edit</button>
+          <button class="btn btn-info" 
+          routerLink="/mywebsite/view-student/{{studentdetail.id}}"
+          (click)="view()">View</button>
+
+          <button 
+            class="btn btn-primary" 
+            routerLink="/mywebsite/edit-student-details/{{studentdetail.id}}"
+            (click)="edit()">Edit
+          </button>
+
           <button class="btn btn-danger" (click)="delete(studentdetail.id)">
             Delete
           </button>

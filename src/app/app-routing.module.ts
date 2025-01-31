@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -29,6 +29,13 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { ViewStudentComponent } from './view-student/view-student.component';
+import { Sibbling1Component } from './sibbling1/sibbling1.component';
+import { Sibbling2Component } from './sibbling2/sibbling2.component';
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
+import { RatingComponent } from './rating/rating.component';
+import { TextAreaComponent } from './text-area/text-area.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -40,10 +47,25 @@ const routes: Routes = [
     {path:'Derivatives',component:DerivativesComponent},
     {path:'employee',component:EmployeeComponent},
     {path:'create-user',component:CreateUserComponent},
-    {path:'student-details',component:StudentDetailsComponent}
+    {path:'student-details',component:StudentDetailsComponent},
+    {path:'sibbling1',component:Sibbling1Component},
+    {path:'sibbling2',component:Sibbling2Component},
+    {path:'child',component:ChildComponent},
+    {path:'parent',component:ParentComponent},
+    {
+
+      path: 'payment',
+  
+      loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule)
+  
+    },
+    {path:'text-area',component:TextAreaComponent},
+
 
 
   ]},
+  
+
   {path:'mywebsite',component:MywebsiteComponent,children:[
     {path:'Home',component:HomeComponent},
     {path:'welcome',component:WelcomeComponent},
@@ -66,13 +88,16 @@ const routes: Routes = [
     {path:'students-card',component:StudentsCardComponent},
     {path:'create-student-id',component:CreateStudentIdComponent},
     {path:'vehicle-details/:id',canActivate:[AuthenticationGuard], component:VehicleDetailsComponent},
-    {path:'edit-vehicle/:id',component:CreateVehicleComponent}
+    {path:'edit-vehicle/:id',component:CreateVehicleComponent},
+    {path:'edit-student-details/:id',component:CreateStudentIdComponent},
+    {path:'view-student/:id',component:ViewStudentComponent},
+    {path:'rating',component:RatingComponent},
 
   ]}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{preloadingStrategy:PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

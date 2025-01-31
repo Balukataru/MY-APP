@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class StudentService {
 
-  constructor(private _httpClient:HttpClient) { }
+  constructor(private _httpClient:HttpClient, private _activatedRoute:ActivatedRoute) { }
 
   getStudentdetails():Observable<any>{
     return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student")
@@ -34,7 +35,15 @@ export class StudentService {
     return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student",data);
 
   }
+  getStudent(id:number){
+    return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student/"+id)
+  }
 
+  updateStudent(id:number,data:any){
+    return this._httpClient.put("https://6128991386a213001729f9df.mockapi.io/test/v1/student/"+id,data)
+  }
+
+  
   
 
   

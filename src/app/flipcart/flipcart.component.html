@@ -5,7 +5,7 @@
     <img src={{product.image}} alt="">
     <div class="rating">
 
-        <p>{{product.rating.rate}}|{{product.rating.count}}</p>
+        <app-rating [rating]="product.rating.rate"></app-rating> |{{product.rating.count}}
     </div>
     <div class="details">
         <h3>{{product.category}}</h3>

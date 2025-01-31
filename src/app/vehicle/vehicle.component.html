@@ -19,6 +19,7 @@
 
 </select>&nbsp;
 <button class="btn btn-primary" (click)="sort()">sort</button>&nbsp;
+
 <select [(ngModel)]="limit">
     <option>10</option>
     <option>20</option>
@@ -55,7 +56,7 @@
             <th>Fuel</th>
             <th>Cost</th>
             <th>Image</th>
-            <th>Actions</th>
+            <th colspan="3">Actions</th>
 
         </tr>
     </thead>
@@ -66,7 +67,7 @@
             <td>{{vehicle.model}}</td>
             <td>{{vehicle.type}}</td>
             <td>{{vehicle.fuel}}</td>
-            <td>{{vehicle.cost}}</td>
+            <td [ngStyle]="{'color':vehicle.cost>300?'green':'red'}">{{vehicle.cost | balance}}</td>
             <td><img src="{{vehicle.image}}" alt=""> </td>
             <td>
                 <button class="btn btn-info"
