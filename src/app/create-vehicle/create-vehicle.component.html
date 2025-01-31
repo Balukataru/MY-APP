@@ -1,0 +1,38 @@
+
+<div>
+    <!-- <h1>{{id? 'Edit Vehicle' : 'Create Vehicle'}}</h1> -->
+     <h1 *ngIf="id">Edit Vehicle</h1>
+     <h1 *ngIf="!id">Create Vehicle</h1>
+    <form action="" [formGroup]="vehicleForm">
+
+
+        <label for="">Vehicle Name</label>
+        <input type="text" formControlName="Vehicle" name="" id=""><br><br>
+        
+        <label for="">Manufacturer</label>
+        <input type="text"formControlName="manufacturer" name="" id=""><br><br>
+        
+        <label for="">Model</label>
+        <input type="text" formControlName="model" name="" id=""><br><br>
+        
+        <label for="">Type</label>
+        <input type="text" formControlName="type" name="model" id=""><br><br>
+        
+        <label for="">Fuel</label>
+        <input type="text" formControlName="fuel" name="" id=""><br><br><br>
+        
+        <label for="">color</label>
+        <input type="text" formControlName="color" name="" id=""><br><br>
+        
+        <label for="">Image</label>
+        <input type="text" formControlName="image" name="" id=""><br><br>
+        
+        <label for="">Cost</label>
+        <input type="text" formControlName="cost" name="" id=""><br><br>
+        
+        <button class="btn btn-info" (click)="create()">submit</button>
+        
+        
+        
+        </form>
+</div>

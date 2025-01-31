@@ -1,0 +1,66 @@
+.main{
+    width: 600px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: brown;
+    color: white;
+}
+#img1{
+    width: 200px;
+    height: 200px;
+}
+.card-body{
+    display: flex;
+    justify-content: space-between;
+    background-color: beige;
+
+}
+.footer-details{
+    display: flex;
+    justify-content: space-between;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    
+}
+button{
+    width: 100px;
+    height: 50px;
+    
+}
+.card-footer{
+    background-color: brown;
+    color: white;
+}
+.fields{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    background-color: brown;
+    
+}
+
+.field1, .field2, .field3, .field4{
+margin: 15px;
+}
+
+
+
+
+
+
+
+
+
+ 

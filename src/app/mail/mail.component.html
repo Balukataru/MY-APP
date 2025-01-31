@@ -1,0 +1,8 @@
+<div class="mails">
+    <table>
+        <tr *ngFor="let mail of mails" [ngClass]="{'color1':mail.completed==true, 'color2':mail.completed==false}">
+            <td>{{mail.id}}</td>
+            <td>{{mail.title}}</td>
+        </tr>
+    </table>
+</div>

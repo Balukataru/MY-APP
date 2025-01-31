@@ -1,0 +1,3 @@
+<p>text-area works!</p>
+<textarea [(ngModel)]="text" (input)=onTextChange($event) maxlength="{{max}}"></textarea>
+<div>{{textToNumber}}/{{max}}</div>

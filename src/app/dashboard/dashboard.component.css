@@ -3,7 +3,15 @@
     height: 100vh;
     width:100vw;
 }
-.right{
+.left{
     width: 15%;
-    background-color: aquamarine;
+    /* background-color: rgb(213, 223, 219); */
+    background-color: black;
+    color: antiquewhite;
+
+}
+.right{
+    width: 85%;
+    overflow: auto;
+    background-color: gray;
 }
